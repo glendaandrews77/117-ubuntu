@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static './css/base.css' %}">
     <link rel="stylesheet" href="{% static './css/header.css' %}">
     <link rel="stylesheet" href="{% static './css/sections.css' %}">
+    <link rel="stylesheet" href="{% static './css/footer.css' %}">
     <link rel="stylesheet" href="{% static './css/responsive.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -36,10 +37,10 @@
             </div>
 
             <div class="nav-link center">
-                <a href="">About Me</a>
-                <a href="">Project</a>
-                <a href="">Experience</a>
-                <a href="">Contact</a>
+                <a href="{% url 'about' %}">About Me</a>
+                <a href="{% url 'projects_list' %}">Project</a>
+                <a href="{% url 'experience_list' %}">Experience</a>
+                <a href="{% url 'contact' %}">Contact</a>
             </div>
         </nav>
     </header>
@@ -49,6 +50,17 @@
 
     {% endblock content %}
 
-    <h2>Footer</h2>
+  <footer>
+    <a href="{% url 'about' %}">
+        <h2>Glenda Bailey-Andrews</h2>
+    </a>
+    <nav class="nav-footer center">
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects_list' %}">Projects</a>
+        <a href="{% url 'experience_list' %}">Experience</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>   
+  </footer>
+
 </body>
 </html>

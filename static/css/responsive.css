@@ -36,6 +36,16 @@
         height: auto;
         overflow: auto;
     }
+
+/* Footer*/
+footer {
+    flex-direction: column;
+
+}
+footer nav {
+    height: fit-content;
+}
+
 }
 
     /* Tablet View */

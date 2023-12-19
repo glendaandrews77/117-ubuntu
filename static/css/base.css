@@ -36,6 +36,12 @@ html {
   margin: 0px;
   padding: 0px;
 }
+body{
+  height: 100vh;;
+  flex-direction: column;
+  display:flex;
+  justify-content: space-between;
+}
 
 /*Text Style*/
 h1 {

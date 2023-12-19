@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title%}About me {% endblock %}
+{% block title%}Projects {% endblock %}
 {% load static %}
 {% block content %}
 
@@ -8,54 +8,26 @@
     <h2>Projects</h2>
 
     <div class="projects-list">
-        <div class="project-card">
-            <a href="https://github.com/glendaandrews77/petSalon-104"target="_blank">
-                <img src="./img/img1.png" alt="">
-                <p>Pet Spa</p>
-                <p>In project we created a Pet Spa Salon using HTML, CSS, and Javascript.</p>
-                <p>2023</p>
-
-                <div class="technologies center">
-                    <label>HTML</label>
-                    <label> CSS </label>
-                    <label> JAVASCRIPT </label>
-                </div>
-            </a>
-        </div>
-
+        {% for project in projects %}
 
 
         <div class="project-card">
-            <a href="https://github.com/glendaandrews77/FDSI-101-Coffee-B"target="_blank">
-                <img src="./img/image2.jpg" alt="">
-                <p>Coffee Blog</p>
-                <p>In this project I was able to utilize VSC, HTML, and CSS. Experimenting.</p>
-                <p>2023</p>
+            <a href="{{ project.repository}}"target="_blank">
+                <img src="{{ project.image }}" alt="">
+
+                <p>{{ project.name }}</p>
+                <p>{{ project.description }}</p>
+                <p>{{ project.year }}</p>
 
                 <div class="technologies center">
-                    <label>HTML</label>
-                    <label>CSS </label>
-                    <label>VSC</label>
+                    {% for tech in project.technologies.all %}
+                    <label>{{ tech.name}}</label>
+                {% endfor %}
                 </div>
             </a>
         </div>
-        <div class="project-card">
-            <a href="https://github.com/glendaandrews77/onlineStore"target="_blank"">
-                <img src="./img/picture-3.jpg
-                " alt="">
-                <p>Kick'in Up Heels</p>
-                <p>This project I created an Online Store of regular heels, boot heels, and faux heels.</p>
-                <p>2023</p>
-
-                <div class="technologies center">
-                    <label>Javascript</label>
-                    <label>CSS </label>
-                    <label>Python</label>
-                </div>
-            </a>
-        </div>
-    </div>
+        
+        {% endfor %}
     </div>
 </section>
-
 {% endblock content %}
